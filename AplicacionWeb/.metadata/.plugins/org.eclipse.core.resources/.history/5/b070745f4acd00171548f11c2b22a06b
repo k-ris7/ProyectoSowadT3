@@ -1,0 +1,179 @@
+package com.presentacion.escritorio;
+
+import java.awt.BorderLayout;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import com.capaentidades.agenda.*;
+import com.negocio.agenda.*;
+
+public class FrmUsuario extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtUsuario;
+	private JTextField txtPassword;
+	private JTextField txtNombre;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					//FrmUsuario frame = new FrmUsuario();
+					//frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrmUsuario() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 632, 424);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JLabel lblNuevoUsuario = new JLabel("Nuevo Usuario");
+		lblNuevoUsuario.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblUsuario = new JLabel("Usuario :");
+		lblUsuario.setFont(new Font("Tahoma", Font.ITALIC, 17));
+		
+		JLabel lblPassword = new JLabel("Password :");
+		lblPassword.setFont(new Font("Tahoma", Font.ITALIC, 17));
+		
+		txtUsuario = new JTextField();
+		txtUsuario.setColumns(10);
+		
+		txtPassword = new JTextField();
+		txtPassword.setColumns(10);
+		
+		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RegistroUsuario();
+			}
+		});
+		
+		JLabel lblNombre = new JLabel("Nombre :");
+		lblNombre.setFont(new Font("Tahoma", Font.ITALIC, 17));
+		
+		txtNombre = new JTextField();
+		txtNombre.setColumns(10);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(227)
+							.addComponent(lblNuevoUsuario))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(90)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(lblUsuario)
+								.addComponent(lblPassword)
+								.addComponent(lblNombre, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE))
+							.addGap(29)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtNombre, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(231)
+							.addComponent(btnRegistrarse)))
+					.addContainerGap(210, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(39)
+					.addComponent(lblNuevoUsuario)
+					.addGap(56)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblUsuario)
+						.addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(39)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblPassword)
+						.addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(59)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNombre, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(btnRegistrarse)
+					.addGap(41))
+		);
+		contentPane.setLayout(gl_contentPane);
+	}
+
+	public  void RegistroUsuario() {
+		
+		String msg="";
+		boolean result;
+		try {
+			
+			Usuario usua =  new Usuario();
+			usua.setUsuario(txtUsuario.getText());
+			usua.setPassword(txtPassword.getText());
+			usua.setNombre(txtNombre.getText());
+			
+			
+			
+			result = UsuarioNegocio.Instancia().InsertarUsuario(usua);
+			if(result)
+				msg = "Registro ingresado exitosamente";
+			else
+				msg ="Error al momento de ingresar";
+					
+			
+			
+			
+		} catch (Exception e) {
+			msg = e.getMessage();
+		}
+		
+		JOptionPane.showMessageDialog(null,msg);
+		
+		LimpiarControles();
+		
+	}
+	
+	public void LimpiarControles()
+	{
+		try {
+			
+			txtUsuario.setText("");
+			txtPassword.setText("");
+			txtNombre.setText("");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+
+}

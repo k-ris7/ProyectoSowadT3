@@ -1,0 +1,213 @@
+package com.presentacion.escritorio;
+
+
+
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import java.awt.Color;
+import java.awt.Window.Type;
+import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+
+
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import com.capaentidades.agenda.*;
+import com.negocio.agenda.*;
+
+public class FrmPrincipal extends JFrame {
+
+	private JPanel contentPane;
+	private JTable tableContactos;
+	private JScrollPane scrollPane;
+	//private ProductoBL productoNEG = new ProductoBL();
+	DefaultTableModel tableModel;
+	private int ContactoUid=0;
+	public int UsuarioID=0;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					
+					//FrmPrincipal frame = new FrmPrincipal();
+					//frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrmPrincipal(int uuarioID) {
+		setResizable(false);
+		setTitle("Mantenedor Contactos");
+		setBackground(Color.WHITE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 486, 337);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setSize(800, 400);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		this.UsuarioID=uuarioID;
+		
+		scrollPane = new JScrollPane();
+		
+		scrollPane.setBounds(5, 45, 779, 315);
+		contentPane.add(scrollPane);
+		contentPane.revalidate();
+		
+		ListarContactos(false);
+		scrollPane.setViewportView(tableContactos);
+		
+		JButton btnIngresar = new JButton("Nuevo");
+		btnIngresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				IngresarContacto();
+				
+			}
+		});
+		btnIngresar.setBounds(5, 11, 89, 23);
+		contentPane.add(btnIngresar);
+		
+		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EliminarProducto();
+			}
+		});
+		btnEliminar.setBounds(107, 11, 89, 23);
+		contentPane.add(btnEliminar);
+		
+		JButton btnCancelar = new JButton("Salir");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnCancelar.setBounds(208, 11, 89, 23);
+		contentPane.add(btnCancelar);
+	}
+	
+	public void ListarContactos(boolean needisRefresh)
+	{
+		try {
+			
+			String col[] = {"ID","Nombre","FechaNacimiento", "TelefonoPrincipal"};
+			tableModel = new DefaultTableModel(col, 0);
+			tableContactos = new JTable(tableModel);
+			tableContactos.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					int row = tableContactos.getSelectedRow();
+					Object UidStr = tableContactos.getValueAt(row,0);
+					ContactoUid = Integer.parseInt(UidStr.toString());
+				}
+			});
+			ArrayList<Contacto> liContacto = ContactoNegocio.Instancia().ListarContactoPorUsuario(this.UsuarioID);
+			
+			for (Contacto contacto : liContacto) {
+				Object[] objs = {contacto.getID(),
+									contacto.getNombre(),
+									contacto.getFechaNacimiento(),
+									contacto.getTelefonoPrincipal()
+								 };
+				
+				tableModel.addRow(objs);
+			}
+			
+			if(needisRefresh)
+				scrollPane.setViewportView(tableContactos);
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	public void IngresarContacto()
+	{
+		try {
+			
+			FrmEditContacto frm = new FrmEditContacto(this,this.UsuarioID);
+			if(frm.isShowing())
+				frm.dispose();
+			
+			frm.show();
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	
+	
+	public void EliminarProducto()
+	{
+		String msg="";
+		boolean result;
+		try {
+			
+			if(this.ContactoUid==0)
+			{
+				JOptionPane.showMessageDialog(null,"Seleccione un contacto para Eliminar");
+				return;
+			}
+			
+			int dialogResult = JOptionPane.showConfirmDialog (null, "Estas Seguro de Eliminar Registro?");
+			if(dialogResult == JOptionPane.YES_OPTION)
+			{
+				result = ContactoNegocio.Instancia().EliminarContacto(this.ContactoUid);
+				if(result)
+					msg="Contacto Eliminado";
+				else
+					msg="Error Al momento de Eliminar";
+			}
+			
+		} catch (Exception e) {
+			msg = e.getMessage();
+		}
+		
+		if(msg!="")
+		{
+			JOptionPane.showMessageDialog(null,msg);
+			ListarContactos(true);
+		}
+			
+	}
+	
+	
+}
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JTable"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+<fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+<fullyQualifiedTypeName name="java.awt.EventQueue"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="javax.swing.border.EmptyBorder"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.presentacion.escritorio.FrmUsuario"/>
+<fullyQualifiedTypeName name="com.capaentidades.agenda.Usuario"/>
+<fullyQualifiedTypeName name="com.negocio.agenda.UsuarioNegocio"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="com.capaentidades.agenda.Contacto"/>
+<fullyQualifiedTypeName name="com.negocio.agenda.ContactoNegocio"/>
+<fullyQualifiedTypeName name="com.presentacion.escritorio.FrmEditContacto"/>
+<fullyQualifiedTypeName name="com.presentacion.escritorio.FrmPrincipal"/>
+</qualifiedTypeNameHistroy>

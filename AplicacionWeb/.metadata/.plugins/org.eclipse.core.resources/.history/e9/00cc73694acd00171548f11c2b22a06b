@@ -1,0 +1,86 @@
+package com.capaentidades.agenda;
+import java.util.Date;
+
+public class Contacto {
+
+	private int ID;
+	private int UsuarioID;
+	private String Nombre;
+	private String Apellido;
+	private String FechaNacimiento;
+	private String Genero;
+	private String TelefonoPrincipal;
+	private String TelefonoAuxiliar;
+	private String Direccion;
+	private String Email;
+	private String DNI;
+	
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
+	public int getUsuarioID() {
+		return UsuarioID;
+	}
+	public void setUsuarioID(int usuarioID) {
+		UsuarioID = usuarioID;
+	}
+	public String getNombre() {
+		return Nombre;
+	}
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+	public String getApellido() {
+		return Apellido;
+	}
+	public void setApellido(String apellido) {
+		Apellido = apellido;
+	}
+	public String getFechaNacimiento() {
+		return FechaNacimiento;
+	}
+	public void setFechaNacimiento(String fechaNacimiento) {
+		FechaNacimiento = fechaNacimiento;
+	}
+	public String getGenero() {
+		return Genero;
+	}
+	public void setGenero(String genero) {
+		Genero = genero;
+	}
+	public String getTelefonoPrincipal() {
+		return TelefonoPrincipal;
+	}
+	public void setTelefonoPrincipal(String telefonoPrincipal) {
+		TelefonoPrincipal = telefonoPrincipal;
+	}
+	public String getTelefonoAuxiliar() {
+		return TelefonoAuxiliar;
+	}
+	public void setTelefonoAuxiliar(String telefonoAuxiliar) {
+		TelefonoAuxiliar = telefonoAuxiliar;
+	}
+	public String getDireccion() {
+		return Direccion;
+	}
+	public void setDireccion(String direccion) {
+		Direccion = direccion;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
+	}
+	public String getDNI() {
+		return DNI;
+	}
+	public void setDNI(String dNI) {
+		DNI = dNI;
+	}
+	
+
+}

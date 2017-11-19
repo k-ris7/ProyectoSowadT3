@@ -1,0 +1,5 @@
+package com.datos.agenda;
+
+public class Conexion {
+
+}

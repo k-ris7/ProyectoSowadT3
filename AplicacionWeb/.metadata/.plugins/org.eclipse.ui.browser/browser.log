@@ -1,0 +1,13 @@
+
+Sep 14, 2017 15:11:29.33 NEW SESSION
+Sep 14, 2017 15:11:29.33 [7212:9148:0914/151129.329:ERROR:ssl_client_socket_impl.cc(1072)] handshake failed; returned -1, SSL error code 1, net_error -101
+Sep 14, 2017 15:12:47.73 [7212:9148:0914/151247.731:ERROR:ssl_client_socket_impl.cc(1072)] handshake failed; returned -1, SSL error code 1, net_error -100
+Sep 14, 2017 15:19:18.54 [7212:9148:0914/151918.548:ERROR:service_manager.cc(142)] Connection InterfaceProviderSpec prevented service: content_plugin from binding interface: memory_instrumentation::mojom::Coordinator exposed by: content_browser
+Sep 14, 2017 15:32:49.46 [7212:9148:0914/153249.463:ERROR:ssl_client_socket_impl.cc(1072)] handshake failed; returned -1, SSL error code 1, net_error -100
+Sep 14, 2017 15:33:17.17 [7212:1756:0914/153317.172:ERROR:simple_index_file.cc(299)] Could not create a directory to hold the index file
+Sep 14, 2017 17:41:12.02 [7212:8352:0914/174111.980:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Sep 14, 2017 17:42:10.05 [7212:8352:0914/174210.052:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Sep 14, 2017 17:43:36.08 [7212:8352:0914/174336.083:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Sep 14, 2017 17:44:30.87 [7212:9148:0914/174430.875:ERROR:ssl_client_socket_impl.cc(1072)] handshake failed; returned -1, SSL error code 1, net_error -100
+Sep 14, 2017 19:47:45.43 [7212:8352:0914/194745.187:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+Sep 14, 2017 20:12:39.67 [7212:8352:0914/201239.673:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost

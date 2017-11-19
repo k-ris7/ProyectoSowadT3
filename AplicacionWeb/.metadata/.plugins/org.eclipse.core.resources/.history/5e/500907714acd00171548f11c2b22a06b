@@ -1,0 +1,54 @@
+package com.negocio.agenda;
+
+import java.util.ArrayList;
+
+import com.capadatos.agenda.ContactoDatos;
+import com.capaentidades.agenda.Contacto;
+
+
+public class ContactoNegocio {
+	
+	//Singleton
+			public static ContactoNegocio _Instancia;
+			private ContactoNegocio(){};
+			public static ContactoNegocio Instancia(){
+				if(_Instancia==null){
+					_Instancia = new ContactoNegocio();
+				}
+				return _Instancia;
+			}
+			//endSingleton
+	
+	public boolean InsertarContacto(Contacto c) throws Exception {	
+		try 
+		{
+			return ContactoDatos.Instancia().InsertarContacto(c);
+		} 
+			catch (Exception e) {
+			throw e;
+		}
+	}
+	
+	public ArrayList<Contacto> ListarContactoPorUsuario(int idUssuario) throws Exception {	
+		try 
+		{
+			return ContactoDatos.Instancia().ListarContactoPorUsuario(idUssuario);
+		} 
+			catch (Exception e) {
+			throw e;
+		}
+	}
+	
+	public boolean EliminarContacto(int idContacto) throws Exception {	
+		try 
+		{
+			return ContactoDatos.Instancia().EliminarContacto(idContacto);
+		} 
+			catch (Exception e) {
+			throw e;
+		}
+	}
+	
+	
+
+}

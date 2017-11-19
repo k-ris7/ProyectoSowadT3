@@ -1,0 +1,277 @@
+package com.presentacion.escritorio;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import com.capaentidades.agenda.Contacto;
+import com.capaentidades.agenda.Usuario;
+import com.negocio.agenda.ContactoNegocio;
+import com.negocio.agenda.UsuarioNegocio;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class FrmEditContacto extends JFrame {
+
+	private JPanel contentPane;
+	private FrmPrincipal Parent;
+	private JTextField txtNombre;
+	private JTextField txtApellidos;
+	private JTextField txtFecNac;
+	private JTextField txtGenero;
+	private JTextField txtTelPrincipal;
+	private JTextField txtTelAux;
+	private JTextField txtDireccion;
+	private JTextField txtDNI;
+	private JTextField txtEmail;
+	private int UusarioId;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					//FrmEditContacto frame = new FrmEditContacto();
+					//frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrmEditContacto(FrmPrincipal parent,int usarioID) {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 834, 505);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		this.Parent=parent;
+		this.UusarioId=usarioID;
+		
+		setContentPane(contentPane);
+		
+		JLabel lblNewLabel = new JLabel("Nombre :");
+		
+		JLabel lblApellidos = new JLabel("Apellidos :");
+		
+		JLabel lblFecNac = new JLabel("Fec Nac:");
+		
+		JLabel lblGenero = new JLabel("Genero :");
+		
+		JLabel lblTelPrincipal = new JLabel("Tel Principal :");
+		
+		JLabel lblTelAux = new JLabel("Tel Aux :");
+		
+		JLabel lblDireccion = new JLabel("Direccion:");
+		
+		JLabel lblDni = new JLabel("DNI :");
+		
+		JLabel lblEmail = new JLabel("Email :");
+		
+		txtNombre = new JTextField();
+		txtNombre.setColumns(10);
+		
+		txtApellidos = new JTextField();
+		txtApellidos.setColumns(10);
+		
+		txtFecNac = new JTextField();
+		txtFecNac.setColumns(10);
+		
+		txtGenero = new JTextField();
+		txtGenero.setColumns(10);
+		
+		txtTelPrincipal = new JTextField();
+		txtTelPrincipal.setColumns(10);
+		
+		txtTelAux = new JTextField();
+		txtTelAux.setColumns(10);
+		
+		txtDireccion = new JTextField();
+		txtDireccion.setColumns(10);
+		
+		txtDNI = new JTextField();
+		txtDNI.setColumns(10);
+		
+		txtEmail = new JTextField();
+		txtEmail.setColumns(10);
+		
+		JButton btnRegistro = new JButton("Registro");
+		btnRegistro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RegistroContacto();
+			}
+		});
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblNewLabel)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtNombre, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblFecNac)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(txtFecNac, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblTelPrincipal)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(txtTelPrincipal, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+									.addGroup(gl_contentPane.createSequentialGroup()
+										.addComponent(lblEmail, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
+									.addGroup(gl_contentPane.createSequentialGroup()
+										.addComponent(lblDireccion, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(txtDireccion, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))))
+							.addGap(62)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblApellidos)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(txtApellidos, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(lblDni, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(txtDNI, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblGenero)
+										.addComponent(lblTelAux, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(txtTelAux, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE)
+										.addComponent(txtGenero, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE)))))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(308)
+							.addComponent(btnRegistro)))
+					.addContainerGap(201, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(30)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel)
+						.addComponent(lblApellidos)
+						.addComponent(txtNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(33)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblFecNac)
+						.addComponent(lblGenero)
+						.addComponent(txtFecNac, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtGenero, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(44)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblTelPrincipal)
+						.addComponent(lblTelAux)
+						.addComponent(txtTelPrincipal, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtTelAux, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(33)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblDni)
+								.addComponent(txtDNI, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(18))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtDireccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblDireccion))
+							.addPreferredGap(ComponentPlacement.UNRELATED)))
+					.addGap(35)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblEmail))
+					.addGap(32)
+					.addComponent(btnRegistro)
+					.addContainerGap(85, Short.MAX_VALUE))
+		);
+		contentPane.setLayout(gl_contentPane);
+	}
+public  void RegistroContacto() {
+		
+		String msg="";
+		boolean result=false;
+		try {
+			
+		    Contacto contac =  new Contacto();
+			contac.setNombre(txtNombre.getText());;
+		    contac.setApellido(txtApellidos.getText());
+		    contac.setFechaNacimiento(txtFecNac.getText());
+		    contac.setGenero(txtGenero.getText());
+		    contac.setTelefonoPrincipal(txtTelPrincipal.getText());
+		    contac.setTelefonoAuxiliar(txtTelAux.getText());
+		    contac.setDireccion(txtDireccion.getText());
+		    contac.setDNI(txtDNI.getText());
+		    contac.setEmail(txtEmail.getText());
+		    contac.setUsuarioID(this.UusarioId);
+		    
+			
+			result = ContactoNegocio.Instancia().InsertarContacto(contac);
+			if(result)
+				msg = "Registro ingresado exitosamente";
+			else
+				msg ="Error al momento de ingresar";
+					
+			//esto esta bien ahora  pr ea loatributos estan bien asi? solo esos nada de ID? ID es autoincrem,ent en bd todo esta bien 
+			//ya vez si la haces , perro mira esta parte lo quite, haber
+			//ahi limpias las cajas para que ingres
+			//ya dale
+			//espera ahora dale perro
+			
+			
+		} catch (Exception e) {
+			msg = e.getMessage();
+		}
+		
+		JOptionPane.showMessageDialog(null,msg);
+		
+		if(result)
+			this.Parent.ListarContactos(true);
+		//LimpiarControles();
+		
+	}
+	
+	/*public void LimpiarControles()
+	{
+		try {
+			
+			txtUsuario.setText("");
+			txtPassword.setText("");
+			txtNombre.setText("");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}*/
+	
+
+	
+	
+	
+}

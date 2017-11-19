@@ -1,0 +1,102 @@
+package com.capadatos.agenda;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import com.capaentidades.agenda.Contacto;
+
+
+
+public class ContactoDatos {
+
+	//Singleton
+		public static ContactoDatos _Instancia;
+		private ContactoDatos(){};
+		public static ContactoDatos Instancia(){
+			if(_Instancia==null){
+				_Instancia = new ContactoDatos();
+			}
+			return _Instancia;
+		}
+		//endSingleton
+		
+		public ArrayList<Contacto> ListarContactoPorUsuario(int idUssuario) throws Exception{
+			Connection cn = null;
+			ArrayList<Contacto> lista = new ArrayList<Contacto>();
+			try {
+				cn = Conexion.Instancia().Conectar();
+				CallableStatement cst = cn.prepareCall("{call sp_ListaContactoPorUsuario(?)}");
+				cst.setInt(1, idUssuario);
+				ResultSet rs = cst.executeQuery();
+				while(rs.next()){
+					Contacto c = new Contacto();
+					c.setID(rs.getInt("ID"));
+					c.setUsuarioID(rs.getInt("UsuarioID"));
+					c.setNombre(rs.getString("Nombre"));
+					c.setApellido(rs.getString("Apellido"));
+					c.setFechaNacimiento(rs.getString("FechaNacimiento"));
+					c.setGenero(rs.getString("Genero"));
+					c.setTelefonoPrincipal(rs.getString("TelefonoPrincipal"));
+					c.setTelefonoAuxiliar(rs.getString("TelefonoAuxiliar"));
+					c.setDireccion(rs.getString("Direccion"));
+					c.setEmail(rs.getString("Email"));
+					c.setDNI(rs.getString("DNI"));
+					lista.add(c);				
+				}
+				return lista;
+			} catch (Exception e) {
+				throw e;
+			}finally{cn.close();}
+		}
+		
+		public boolean InsertarContacto(Contacto c) throws Exception {
+			Connection cn = null;
+			boolean inserto = false;
+			try {
+				
+				cn = Conexion.Instancia().Conectar();
+				CallableStatement cst = cn.prepareCall("{call sp_InsertaContacto(?,?,?,?,?,?,?,?,?,?)}");
+				cst.setInt(1, c.getUsuarioID());
+				cst.setString(2, c.getNombre());
+				cst.setString(3, c.getApellido());
+				cst.setString(4, c.getFechaNacimiento());
+				cst.setString(5, c.getGenero());
+				cst.setString(6, c.getTelefonoPrincipal());
+				cst.setString(7, c.getTelefonoAuxiliar());
+				cst.setString(8, c.getDireccion());
+				cst.setString(9, c.getEmail());
+				cst.setString(10, c.getDNI());
+				
+				int i = cst.executeUpdate();
+				if(i>0){inserto=true;}			
+			} catch (Exception e) {
+				throw e;
+			} finally {
+				cn.close();
+			}
+			return inserto;
+		}
+		
+		public boolean EliminarContacto(int idContacto) throws Exception {
+			Connection cn = null;
+			boolean inserto = false;
+			try {
+				cn = Conexion.Instancia().Conectar();
+				CallableStatement cst = cn.prepareCall("{call sp_EliminaContacto(?)}");
+				cst.setInt(1, idContacto);
+				
+				int i = cst.executeUpdate();
+				if(i>0){inserto=true;}			
+			} catch (Exception e) {
+				throw e;
+			} finally {
+				cn.close();
+			}
+			return inserto;
+		}
+		
+		
+		
+}
