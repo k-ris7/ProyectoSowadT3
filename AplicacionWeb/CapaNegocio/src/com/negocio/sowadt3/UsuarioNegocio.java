@@ -14,6 +14,27 @@ public class UsuarioNegocio {
 		return _Instancia;
 	}
 	//endSingleton
-	
+	public Usuario VerificarAcceso(String _User, String _Passw) throws Exception{
+		try {
+			if(_User.equals("")){
+				throw new ArithmeticException("Debe ingresar su usuario");
+			}
+			if(_User.equals("")){
+				throw new ArithmeticException("Debe ingresar su contraseña");
+			}
+			Usuario usuario = UsuarioDAO.Instancia().VerificarAcceso(_User, _Passw);
+			
+			if(usuario == null){
+				throw new Exception("Usuario o contraseña no valida");
+			}	
+						
+			if(usuario.getPersona().isActivo() == false){
+				throw new Exception("Usuario INACTIVO");
+			}
+			return usuario;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 	
 }
