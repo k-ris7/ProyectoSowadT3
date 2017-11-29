@@ -1,0 +1,97 @@
+package com.negocio.sowadt3;
+
+import java.util.ArrayList;
+
+import com.datos.sowadt3.ClienteDAO;
+import com.entidades.sowadt3.Cliente;
+
+public class ClienteNegocio {
+	//Singleton
+		public static ClienteNegocio _Instancia;
+		private ClienteNegocio(){};
+		public static ClienteNegocio Instancia(){
+			if(_Instancia==null){
+				_Instancia = new ClienteNegocio();
+			}
+			return _Instancia;
+		}
+		//endSingleton
+		
+		public Cliente VerificarAccesoCliente(String _User, String _Passw) throws Exception{
+			try {
+				if(_User.equals("")){
+					throw new ArithmeticException("Debe ingresar su usuario");
+				}
+				if(_User.equals("")){
+					throw new ArithmeticException("Debe ingresar su contraseña");
+				}
+				Cliente cliente = ClienteDAO.Instancia().VerificarAccesoCliente(_User, _Passw);
+				
+				if(cliente == null){
+					throw new Exception("Usuario o contraseña no valida");
+				}	
+							
+				if(cliente.getPersona().isActivo() == false){
+					throw new Exception("CLIENTE INACTIVO");
+				}
+				return cliente;
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+		
+		public  ArrayList<Cliente> ListaCliente() throws Exception {
+			try {
+				return ClienteDAO.Instancia().listarCliente();
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+		
+		public boolean insertarCliente(Cliente cliente) throws Exception {
+			try {
+				if(cliente.getPersona().getNombre().equals("")){
+					throw new Exception("Debe ingresar el nombre del cliente");				
+				}
+				if(cliente.getPersona().getDNI().equals("")){
+					throw new Exception("Debe ingresar el DNI del cliente");				
+				}
+				for (Cliente c : ClienteDAO.Instancia().listarCliente())
+					if (c.getPersona().getDNI().equals(cliente.getPersona().getDNI()))
+						throw new Exception("El cliente ya se encuentra registrado : DNI EXISTENTE");
+				return ClienteDAO.Instancia().insertarCliente(cliente);
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+		
+		public boolean modificarCliente(Cliente cliente) throws Exception {
+			try {
+				if(cliente.getPersona().getNombre().equals("")){
+					throw new Exception("Debe ingresar el nombre del cliente");				
+				}
+				if(cliente.getPersona().getDNI().equals("")){
+					throw new Exception("Debe ingresar el DNI del cliente");				
+				}
+				return ClienteDAO.Instancia().modificarCliente(cliente);
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+		
+		public boolean eliminarCliente(int idCliente) throws Exception {
+			try {
+				return ClienteDAO.Instancia().eliminarCliente(idCliente);
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+		
+		public Cliente devolverCliente(int idCliente) throws Exception {
+			try {
+				return ClienteDAO.Instancia().devolverCliente(idCliente);
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+}
