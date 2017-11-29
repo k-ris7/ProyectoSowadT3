@@ -2779,3 +2779,18 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://do
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:74)
 !SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2017-11-28 21:21:11.377
 !MESSAGE No repository found at http://download.eclipse.org/oomph/uss/drops/nightly/N20171127-232157.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-28 21:21:22.823
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-11-28 21:22:09.924
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-11-28 21:22:09.939
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-11-28 21:22:10.013
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-11-28 21:22:10.032
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
