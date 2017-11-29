@@ -222,7 +222,7 @@
 	var mins = 'mins';
 	var mywishlist_url = 'login9f97.html';
 	var page_name = 'index';
-	var placeholder_blocknewsletter = 'Enter your Email...';
+	var placeholder_blocknewsletter = 'Enter your email...';
 	var priceDisplayMethod = 1;
 	var priceDisplayPrecision = 2;
 	var quickView = true;
