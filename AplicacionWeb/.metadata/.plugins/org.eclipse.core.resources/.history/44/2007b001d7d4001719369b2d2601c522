@@ -65,20 +65,5 @@ public class ProductoNegocio {
 		}
 	}
 	
-	public boolean eliminarProducto(int idProducto) throws Exception {
-		try {
-			return ProductoDAO.Instancia().eliminarProducto(idProducto);
-		} catch (Exception e) {
-			throw e;
-		}
-	}
-	
-	public Producto devolverProducto(int idProducto) throws Exception {
-		try {
-			return ProductoDAO.Instancia().devolverProducto(idProducto);
-		} catch (Exception e) {
-			throw e;
-		}
-	}
 	
 }
