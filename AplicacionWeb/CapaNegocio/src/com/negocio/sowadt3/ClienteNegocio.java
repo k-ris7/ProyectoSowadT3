@@ -87,6 +87,13 @@ public class ClienteNegocio {
 			}
 		}
 		
-		
+		public Cliente devolverCliente(int idCliente) throws Exception{
+			
+			try {
+				return ClienteDAO.Instancia().devolverCliente(idCliente);
+			}catch (Exception e) {
+				throw e;
+			}
+		}
 		
 }
