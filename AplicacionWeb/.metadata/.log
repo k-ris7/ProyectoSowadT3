@@ -9122,3 +9122,51 @@ Caused by: java.io.FileNotFoundException: C:\Program Files\Git\mingw64\share\git
 
 !ENTRY org.eclipse.lsp4e 1 0 2017-11-29 03:30:23.931
 !MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:26:57.663
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:26:59.496
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:01.283
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:03.149
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:04.971
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:07.042
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:08.968
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:11.041
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:12.852
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:15.439
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:17.210
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:19.072
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:21.532
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:23.403
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:25.292
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2017-11-29 17:27:27.455
+!MESSAGE Server returned lastModified <= 0 for http://www.ancitconsulting.com/gitHub-pr/content.jar
