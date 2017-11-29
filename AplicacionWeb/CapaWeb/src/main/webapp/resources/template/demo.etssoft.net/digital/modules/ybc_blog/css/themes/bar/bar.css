@@ -1,0 +1,402 @@
+/*
+Skin Name: Nivo Slider Default Theme
+Skin URI: http://nivo.dev7studios.com
+Description: The default skin for the Nivo Slider.
+Version: 1.3
+Author: Gilbert Pellegrom
+Author URI: http://dev7studios.com
+Supports Thumbs: true
+*/
+
+.theme-bar .nivoSlider {
+	position:relative;
+	background:#fff url(loading.gif) no-repeat 50% 50%;
+    /*-webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+    -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+    box-shadow: 0px 1px 5px 0px #4a4a4a;*/
+}
+.theme-bar .nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+.theme-bar .nivoSlider a {
+	border:0;
+	display:block;
+}
+
+.theme-bar .nivo-controlNav {
+	text-align: center;
+    bottom: -60px;
+    position: absolute;
+    width: 100%;
+}
+.bybc-blog-slider {
+  display: block;
+  float: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.theme-bar .nivo-controlNav a {
+	display:inline-block;
+	width:20px;
+	height:19px;
+	background:url(bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin: 0 2px;
+}
+.theme-bar .nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+@media (min-width: 768px){
+/*pink */
+.theme-bar .nivo-directionNav .nivo-prevNav {
+  background-image: url("prev-white.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-top: -45px;
+  width: 100%;
+}
+.theme-bar .nivo-directionNav .nivo-prevNav::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.theme-bar .nivo-directionNav .nivo-nextNav::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.theme-bar .nivo-directionNav .nivo-nextNav{
+    background-image: url("next-white.png");  
+    background-repeat: no-repeat;
+    background-position: center center
+}
+/*skin violet */
+.ybc_blog_skin_violet .theme-bar .nivo-directionNav .nivo-nextNav
+{
+    background: rgba(155,83,156,0.6) url("next.png") no-repeat scroll 0 0;  
+}
+.ybc_blog_skin_violet .theme-bar .nivo-directionNav .nivo-prevNav {
+  background: rgba(155,83,156,0.6) url("prev.png") no-repeat scroll 0 0;
+
+}
+.ybc_blog_skin_violet .theme-bar .nivo-directionNav .nivo-prevNav:hover
+{
+    background: rgba(155,83,156,0.8) url("prev.png") no-repeat scroll 0 0;   
+}
+.ybc_blog_skin_violet .theme-bar .nivo-directionNav .nivo-nextNav:hover
+{
+    background: rgba(155,83,156,0.8) url("next.png") no-repeat scroll 0 0;     
+}
+
+/*end skin violet */
+/*skin orange */
+.ybc_blog_skin_orange .theme-bar .nivo-directionNav .nivo-nextNav
+{
+    background: rgba(255,172,0,0.6) url("next.png") no-repeat scroll 0 0;  
+}
+.ybc_blog_skin_orange .theme-bar .nivo-directionNav .nivo-prevNav {
+  background: rgba(255,172,0,0.6) url("prev.png") no-repeat scroll 0 0;
+
+}
+.ybc_blog_skin_orange .theme-bar .nivo-directionNav .nivo-prevNav:hover
+{
+    background: rgba(255,172,0,0.8) url("prev.png") no-repeat scroll 0 0;   
+}
+.ybc_blog_skin_orange .theme-bar .nivo-directionNav .nivo-nextNav:hover
+{
+    background: rgba(255,172,0,0.8) url("next.png") no-repeat scroll 0 0;     
+}
+
+/*skin green */
+.ybc_blog_skin_green .theme-bar .nivo-directionNav .nivo-nextNav
+{
+    background: rgba(130,175,124,0.6) url("next.png") no-repeat scroll 0 0;  
+}
+.ybc_blog_skin_green .theme-bar .nivo-directionNav .nivo-prevNav {
+  background: rgba(130,175,124,0.6) url("prev.png") no-repeat scroll 0 0;
+
+}
+.ybc_blog_skin_green .theme-bar .nivo-directionNav .nivo-prevNav:hover
+{
+    background: rgba(130,175,124,0.8) url("prev.png") no-repeat scroll 0 0;   
+}
+.ybc_blog_skin_green .theme-bar .nivo-directionNav .nivo-nextNav:hover
+{
+    background: rgba(130,175,124,0.8) url("next.png") no-repeat scroll 0 0;     
+}
+
+/*end skin green */
+
+/*skin black */
+.ybc_blog_skin_black .theme-bar .nivo-directionNav .nivo-nextNav
+{
+    background: rgba(0,0,0,0.6) url("nextfordefault.png") no-repeat scroll 0 0;  
+}
+.ybc_blog_skin_black .theme-bar .nivo-directionNav .nivo-prevNav {
+  background: rgba(0,0,0,0.6) url("prevfordefault.png") no-repeat scroll 0 0;
+
+}
+.ybc_blog_skin_black .theme-bar .nivo-directionNav .nivo-prevNav:hover
+{
+    background: rgba(0,0,0,0.8) url("prevfordefault.png") no-repeat scroll 0 0;   
+}
+.ybc_blog_skin_black .theme-bar .nivo-directionNav .nivo-nextNav:hover
+{
+    background: rgba(0,0,0,0.8) url("nextfordefault.png") no-repeat scroll 0 0;     
+}
+
+
+/*skin grey */
+.ybc_blog_skin_grey .theme-bar .nivo-directionNav .nivo-nextNav
+{
+    background: rgba(195,215,223,0.6) url("next.png") no-repeat scroll 0 0;  
+}
+.ybc_blog_skin_grey .theme-bar .nivo-directionNav .nivo-prevNav {
+  background: rgba(195,215,223,0.6) url("prev.png") no-repeat scroll 0 0;
+
+}
+.ybc_blog_skin_grey .theme-bar .nivo-directionNav .nivo-prevNav:hover
+{
+    background: rgba(195,215,223,0.8) url("prev.png") no-repeat scroll 0 0;   
+}
+.ybc_blog_skin_grey .theme-bar .nivo-directionNav .nivo-nextNav:hover
+{
+    background: rgba(195,215,223,0.8) url("next.png") no-repeat scroll 0 0;     
+}
+
+/*end skin grey*/
+
+/*end next and pre */
+.theme-bar .nivo-directionNav a {
+	display:block;
+	text-indent:-9999px;
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    width:45px;
+    height: 42px;
+    float: right;
+}
+.theme-bar .nivo-directionNav {
+  position: absolute;
+  right: 3px;
+  top: 64.5%;
+  width: 45px;
+}
+.theme-bar .nivo-caption a {
+    color:#fff;
+    border-bottom:1px dotted #fff;
+}
+.theme-bar .nivo-caption a:hover {
+    color:#fff;
+}
+
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled {
+	width: 100%;
+}
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled a {
+	width: auto;
+	height: auto;
+	background: none;
+	margin-bottom: 5px;
+}
+.theme-bar .nivo-controlNav.nivo-thumbs-enabled img {
+	display: block;
+	width: 120px;
+	height: auto;
+}
+
+}
+
+.theme-bar .nivo-caption {
+  float: right;
+  height: 22.5%;
+  margin-right: 3px;
+  max-width: 100%;
+  min-width: 60%;
+  width: auto;
+} 
+
+
+@media (max-width: 1199px){
+    .theme-bar .nivo-directionNav {  
+      top: 61.3%; 
+    }   
+}
+@media (max-width: 991px){    
+.theme-bar .nivo-caption {
+  height: 33.5%!important;
+}
+.theme-bar .nivo-directionNav {
+  top: 44.8%;
+}
+}
+@media (max-width:767px){
+    .theme-bar .nivo-directionNav {  
+      top: 52%; 
+    } 
+.nivo-nextNav::before,
+.nivo-prevNav::before {
+  font-size: 24px;
+  height: 30px; 
+  text-align: center;
+  width: 30px;
+  color:#fff;
+}
+.nivo-nextNav::before
+{
+  content: "\f105";
+  font-family: FontAwesome;
+  padding: 11px;
+}
+.nivo-prevNav::before
+{
+  content: "\f104";
+  font-family: FontAwesome;
+  padding: 8px 10px 8px 8px;
+} 
+.nivo-nextNav,
+.nivo-prevNav 
+{
+  border: 2px solid #fff !important;
+  border-radius: 50%;
+  height: 30px;
+  line-height: 24px;
+  overflow: hidden;
+  text-align: center;
+  width: 30px;
+}
+.nivo-nextNav
+{
+   margin-right: 10px;
+}
+.nivo-prevNav 
+{
+    margin-left: 10px;
+} 
+
+} 
+
+@media (min-width: 600px) and (max-width:767px){
+.nivo-caption {
+  padding: 11px 18px!important;
+}
+}
+
+@media (min-width:481px) and (max-width:599px){
+    .nivo-caption > span {  
+  font-size: 12px;
+  line-height:16px;
+}
+}
+
+
+   
+/*    
+.theme-bar .nivo-directionNav .nivo-prevNav:before {
+  color: red;
+  font-family: FontAwesome;
+  content: "\f104";
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  background: grey;
+  padding: 0 10px;
+  margin-left: 20px;
+} 
+
+.theme-bar .nivo-directionNav .nivo-prevNav
+{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-indent: -999px;
+}
+*/
+
+
+  
+@media (max-width:600px){
+    .theme-bar .nivo-directionNav {
+      top: 46%;
+    }    
+}
+
+@media (max-width:480px){
+    .theme-bar .nivo-caption {
+  display:none!important;
+} 
+.theme-bar .nivo-directionNav {
+  top: 79.3%;
+}
+
+  
+}
+
+@media (max-width:414px){
+  .theme-bar .nivo-directionNav {
+  top: 75.3%;
+}
+}
+
+  
+@media (max-width:375px){
+  .theme-bar .nivo-directionNav {
+  top: 72.3%;
+} 
+}
+
+
+@media (max-width:360px){
+  .theme-bar .nivo-directionNav {
+  top: 71%;
+} 
+}
+
+/*255,110,158 ,#ff6e9e*/ 
+
+
+/*next, prev max-width:767px
+.owl-buttons .owl-prev::before, .owl-buttons .owl-next::before {
+  color: #e5e5e5;
+  content: "\f105";
+  float: left;
+  font-family: FontAwesome;
+  font-size: 15px;
+  font-weight: 300;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  width: 20px;
+}
+.sidebar-post-type-casual #ybc-blog-posts-latest-list .owl-buttons .owl-prev::before {
+  color: #fff;
+  content: "\f104";
+  font-family: FontAwesome;
+  font-size: 20px;
+}
+.sidebar-post-type-casual #ybc-blog-posts-latest-list .owl-prev,
+.sidebar-post-type-casual #ybc-blog-posts-latest-list .owl-next {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 25px;
+  left: 10px;
+  line-height: 25px;
+  position: absolute !important;
+  text-align: center;
+  width: 25px;
+}
+*/

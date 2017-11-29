@@ -1,0 +1,127 @@
+.shop-phone {
+  color: #ff8f8f;
+  float: left;
+  line-height: 18px;
+  padding: 15px 0px 10px;
+}
+.shop-phone > span {
+  font-size: 12px;
+}
+
+.shop-phone i {
+    font-size: 21px;
+    line-height: 21px;
+    color: #fff;
+    padding-right: 7px; 
+}
+
+#contact-link {
+  float: left;
+}
+#contact-link a.contact::before {
+  display: none;
+}
+#contact-link a.contact {
+  padding-left: 0;
+}
+
+#contact-link a {
+  cursor: pointer;
+  display: inline-block;
+  line-height: 28px;
+  padding: 8px 13px;
+  position: relative;
+  text-transform: uppercase;
+}
+#contact-link a::before {
+  border-radius: 1px;
+  content: "";
+  display: inline-block;
+  height: 6px;
+  margin-right: 4px;
+  top: -5px;
+  vertical-align: 2px;
+  width: 6px;
+  background-color: #999;
+}
+
+
+
+#contact_block .label {
+  display: none; }
+#contact_block .block_content {
+  color: #888888; }
+#contact_block p {
+  margin-bottom: 4px; }
+#contact_block p.tel {
+  font: 400 17px/21px Arial, Helvetica, sans-serif;
+  color: #333;
+  margin-bottom: 6px; }
+  #contact_block p.tel i {
+    font-size: 25px;
+    vertical-align: -2px;
+    padding-right: 10px; }
+
+@media (max-width: 991px){
+    #contact-link a {
+      padding: 8px 8px;
+    }
+    .shop-phone.is_logged {
+      display: none; 
+    } 
+}
+@media (max-width: 767px) {
+    #contact-link.is_logged {
+      display: none; 
+    } 
+    .shop-phone {
+      padding: 12px 0 10px;
+    }
+}
+@media (max-width: 479px) {
+    #contact-link {
+      text-align: center; 
+    } 
+    .shop-phone {
+      font-size: 0;
+      padding: 10px 0 0;
+    }
+   .shop-phone span {
+      font-size: 10px;
+    }     
+  #contact-link a {
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px; 
+  } 
+  #contact-link a::before {
+      display: none;
+    }
+    #contact-link a {
+      clear: left;
+      float: left;
+      line-height: 30px;
+      padding: 0 10px;
+      text-align: left;
+      width: 100%;
+    }
+  
+    #contact-link a.wishlist::before {
+      content: "\f08a";
+      float: left;
+      font-family: FontAwesome;
+      height: 100%;
+      text-align: center;
+      width: 100%;
+    }
+    #contact-link {
+      clear: left;
+      float: left;
+    }
+    #contact-link a.contact {
+      padding-left: 10px;
+    }
+}
+
+
+/*# sourceMappingURL=blockcontact.css.map */

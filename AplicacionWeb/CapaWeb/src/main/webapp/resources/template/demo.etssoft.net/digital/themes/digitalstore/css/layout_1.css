@@ -1,0 +1,11 @@
+
+.ybc-menu-toggle, .ybc-menu-button-toggle {
+  display: block;
+  float: left;
+}
+@media (max-width: 1199px){
+    .ybc-caption-position-left {
+      margin-left: 5% !important;
+    }
+}
+/*slider*/

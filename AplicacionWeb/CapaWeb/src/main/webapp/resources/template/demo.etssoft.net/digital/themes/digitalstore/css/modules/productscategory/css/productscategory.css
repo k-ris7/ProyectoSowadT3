@@ -1,0 +1,7 @@
+#productscategory_list .exclusive span:focus, #productscategory_list .exclusive span:active {
+    text-decoration: none; 
+}
+#productscategory_list {
+  padding-top: 10px;
+}
+/*# sourceMappingURL=productscategory.css.map */

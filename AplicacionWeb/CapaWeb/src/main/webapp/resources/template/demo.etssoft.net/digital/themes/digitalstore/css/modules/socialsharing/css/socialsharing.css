@@ -1,0 +1,82 @@
+#usefull_link_block.socialsharing_product button {
+  border: medium none;
+  float: left;
+  height: 100%;
+  line-height: 30px;
+  margin: 0;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  overflow: hidden;
+  width: 100%;
+}
+.socialsharing_product .social-sharing i {
+  float: left;
+  line-height: 30px;
+  margin-right: 5px;
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-facebook{
+    color: #fff;
+    border: 1px solid #435f9f;
+    background-color: #435f9f;
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-facebook:hover {
+  color: white;
+  background-color: #435f9f;
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-twitter {
+  color: #fff; 
+  border: 1px solid #00aaf0;
+  background-color: #00aaf0;
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-twitter:hover {
+  color: white;
+  background-color: #00aaf0; 
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-twitter:hover i {
+    color: white; 
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-google-plus {
+  color: #fff; 
+  border: 1px solid #e04b34;
+  background-color: #e04b34;
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-google-plus:hover {
+  color: white;
+  background-color: #e04b34; 
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-google-plus:hover i {
+    color: white; 
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-pinterest {
+  color: #fff; 
+  border: 1px solid #ce1f21;
+  background-color: #ce1f21;
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-pinterest:hover {
+  color: white;
+  background-color: #ce1f21; 
+}
+#usefull_link_block.socialsharing_product .social-sharing.btn-pinterest:hover i {
+    color: white; 
+}
+.icon-hover {
+  bottom: 100%;
+  left: 10px;
+  position: absolute;
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  opacity: 1!important;
+}
+.socialsharing_product .social-sharing:hover .icon-hover {
+  bottom: 0;
+}
+.socialsharing_product .social-sharing:hover i {
+  opacity: 0.5;
+}
+@media (max-width: 479px){
+    #usefull_link_block.socialsharing_product button {
+      padding: 0 7px;
+    }
+}
