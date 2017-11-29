@@ -32,6 +32,38 @@ public class ProductoNegocio {
 		}
 	}
 	
+
+	public boolean insertarProducto(Producto producto) throws Exception {
+		try {
+			if(producto.getCodigo().equals("")){
+				throw new Exception("Debe ingresar el codigo del producto");				
+			}
+			if(producto.getNombre().equals("")){
+				throw new Exception("Debe ingresar el nombre del producto");				
+			}
+
+			for (Producto p : ProductoDAO.Instancia().ListarProductos_All())
+				if (p.getCodigo().equals(producto.getCodigo()))
+					throw new Exception("Este producto ya existe: CODIGO Repetido");
+			return ProductoDAO.Instancia().insertarProducto(producto);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+	
+	public boolean modificarProducto(Producto producto) throws Exception {
+		try {
+			if(producto.getCodigo().equals("")){
+				throw new Exception("Debe ingresar el codigo del producto");				
+			}
+			if(producto.getNombre().equals("")){
+				throw new Exception("Debe ingresar el nombre del producto");				
+			}
+			return ProductoDAO.Instancia().modificarProducto(producto);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 	
 	
 }
