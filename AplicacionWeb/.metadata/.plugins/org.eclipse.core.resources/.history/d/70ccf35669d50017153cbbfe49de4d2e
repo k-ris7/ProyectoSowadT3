@@ -1,0 +1,114 @@
+package form;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.entidades.sowadt3.Usuario;
+import com.negocio.sowadt3.UsuarioNegocio;
+
+
+public class frmLogin extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtUsuario;
+	private JPasswordField txtPass;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frmLogin frame = new frmLogin();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public frmLogin() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblSistemaDeVentas = new JLabel("SISTEMA DE VENTAS ELEKTRA");
+		lblSistemaDeVentas.setBounds(126, 11, 187, 14);
+		contentPane.add(lblSistemaDeVentas);
+		
+		JLabel lblUsuario = new JLabel("USUARIO:");
+		lblUsuario.setBounds(53, 61, 100, 14);
+		contentPane.add(lblUsuario);
+		
+		JLabel lblClave = new JLabel("CLAVE:");
+		lblClave.setBounds(53, 113, 100, 14);
+		contentPane.add(lblClave);
+		
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(144, 58, 198, 20);
+		contentPane.add(txtUsuario);
+		txtUsuario.setColumns(10);
+		
+		txtPass = new JPasswordField();
+		txtPass.setBounds(144, 110, 198, 20);
+		contentPane.add(txtPass);
+		
+		JButton btnIngresar = new JButton("INGRESAR");
+		btnIngresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try{
+					Usuario u = UsuarioNegocio.Instancia().VerificarAcceso(
+							txtUsuario.getText(), 
+							txtPass.getText());
+					if(u!=null){
+						JOptionPane.showMessageDialog(null,
+							"Bienvenido al sistema: " +
+									u.getPersona().getNombre()+" "+u.getPersona().getApellidoPaterno(), 
+							"SISTEMA ELEKTRA", 
+							JOptionPane.OK_OPTION+
+							JOptionPane.INFORMATION_MESSAGE);	
+						
+							dispose();
+							frmPrincipal m = new frmPrincipal();							
+							m.show();
+					
+					}else{
+						JOptionPane.showMessageDialog(null,
+								"Usuario o password no valido", 
+								"SISTEMA ELEKTRA", 
+								JOptionPane.WARNING_MESSAGE);					
+					}
+				}catch(Exception ex){
+					JOptionPane.showMessageDialog(null,
+							ex.getMessage(), 
+							"SISTEMA ELEKTRA", 
+							JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		btnIngresar.setBounds(115, 152, 198, 23);
+		contentPane.add(btnIngresar);
+		
+		JButton btnRegistrarNuevoUsuario = new JButton("REGISTRAR NUEVO USUARIO");
+		btnRegistrarNuevoUsuario.setBounds(26, 212, 198, 23);
+		contentPane.add(btnRegistrarNuevoUsuario);
+	}
+}
