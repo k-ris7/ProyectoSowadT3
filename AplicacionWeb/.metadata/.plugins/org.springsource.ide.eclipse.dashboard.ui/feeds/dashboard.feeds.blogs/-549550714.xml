@@ -5,7 +5,29 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-11-29T20:46:55Z</updated>
+  <updated>2017-11-30T07:49:14Z</updated>
+  <entry>
+    <title>Spring Boot 2.0.0 M7 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/11/30/spring-boot-2-0-0-m7-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2017-11-30:3118</id>
+    <updated>2017-11-30T07:49:14Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team, it is my pleasure to announce that Spring Boot 2.0.0.M7 has been released and is now available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release closes &lt;a href="https://github.com/spring-projects/spring-boot/milestone/56?closed=1"&gt;165 issues and pull requests&lt;/a&gt; and continues our progress towards 2.0 GA. Thanks to everyone that has contributed!&lt;/p&gt;
+&lt;p&gt;This release refines a number of items from previous milestones, and provides a number of notable new features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Condition evaluation report deltas on Devtools triggered restart&lt;/li&gt;
+  &lt;li&gt;A new scheduled tasks actuator endpoint&lt;/li&gt;
+  &lt;li&gt;Support for Duration types in configuration properties (e.g. &lt;code&gt;5ms&lt;/code&gt;, &lt;code&gt;1s&lt;/code&gt;, &lt;code&gt;10m&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Reactive Couchbase support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are upgrading from the previous milestone please be aware that actuator endpoints are now under &lt;code&gt;/actuator&lt;/code&gt; rather than &lt;code&gt;/application&lt;/code&gt;. You will also need to set &lt;code&gt;management.endpoints.web.expose=*&lt;/code&gt; if you want to access all enabled endpoints over HTTP.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes, and upgrade instructions, see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0.0-M7-Release-Notes"&gt;Spring Boot 2.0.0.M7 Release Notes&lt;/a&gt; on the WIKI. &lt;/p&gt;
+&lt;p&gt;To get started with Spring Boot 2.0.0 M7 and discover those new feature, you can easily bootstrap a new project on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.0.0.M7/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring IO Platform Brussels-SR6</title>
     <link rel="alternate" href="https://spring.io/blog/2017/11/29/spring-io-platform-brussels-sr6" />
@@ -1133,34 +1155,5 @@ dependencies {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;The &lt;a href="https://docs.spring.io/spring-cloud-skipper/docs/1.0.0.M2/reference/htmlsingle/#getting-started-installing-skipper"&gt;getting started section&lt;/a&gt; in the reference guide is the best place to start kicking the tires.&lt;/p&gt;
 &lt;p&gt;Please reach out on &lt;a href="https://github.com/spring-cloud/spring-cloud-skipper/issues"&gt;Github issues&lt;/a&gt;, &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-skipper"&gt;Stack Overflow&lt;/a&gt;, and the &lt;a href="https://gitter.im/spring-cloud/spring-cloud-skipper"&gt;Gitter channel&lt;/a&gt; with questions, feedback or contributions.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - November 21st, 2017</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/11/21/this-week-in-spring-november-21st-2017" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2017-11-21:3098</id>
-    <updated>2017-11-21T15:30:47Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Can you beleive we&amp;rsquo;re less than six weeks away from 2018? Time sure flies when you&amp;rsquo;re having fun! &lt;/p&gt;
-&lt;p&gt;This week I&amp;rsquo;m in Los Angeles talking to community members and then taking in the Thanksgiving holiday here in the US surrounded by friends and family. Thanksgiving is a chance to reflect on that for which we are thankful. I am sure that I speak for all of us here on the Spring and Pivotal teams when I say that we are &lt;em&gt;thankful&lt;/em&gt; for you. Thank you for making this the most amazing, dynamic, exhilarating and interesting community in tech. If you&amp;rsquo;re in the US, happy Thanksgiving! Either way, we&amp;rsquo;ve got a lot to cover this week so let&amp;rsquo;s get to it. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Cloud co-founder and co-lead Spencer Gibb has just announced &lt;a href="https://spring.io/blog/2017/11/18/spring-cloud-finchley-m4-released"&gt;Spring Cloud Finchley M4&lt;/a&gt;. This new release updates everything to support Spring Boot 2.0.0.M6. As always, this is a milestone release and represents an ideal opportunity for you to try the bits.&lt;/li&gt;
-  &lt;li&gt;In this last week&amp;rsquo;s installment of &lt;a href="http://twitter.com/SpringTipsLive"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;&lt;/a&gt; I looked at some of the more exotic features of the &lt;a href="https://spring.io/blog/2017/11/15/spring-tips-the-spring-boot-build-plugin"&gt;Spring Boot build plugin&lt;/a&gt; including &lt;em&gt;fat&lt;/em&gt; &lt;code&gt;.jar&lt;/code&gt;s and &lt;em&gt;thin&lt;/em&gt; &lt;code&gt;.jar&lt;/code&gt;s.&lt;/li&gt;
-  &lt;li&gt;Check out Spring Boot community legend Nicolas Fränkel&amp;rsquo;s talk introducing &lt;a href="https://www.youtube.com/watch?v=zSJFx0iyrq4"&gt;the under-the-hood mechanisms of Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Abhinav Mehla introduces the availability &lt;a href="https://www.mongodb.com/blog/post/on-demand-mongodb-enterprise-on-pivotal-cloud-foundry"&gt;of MongoDB Enterprise on Pivotal Cloud Foundry&lt;/a&gt;. This is awesome!&lt;/li&gt;
-  &lt;li&gt;This is such good news! Rod Johnson&amp;rsquo;s startup, Atomist, which aims to automate the end-to-end lifecycle around application development, &lt;a href="https://sdtimes.com/atomist-announces-new-automation-platform-targeted-developers/"&gt;has launched and announced their automation platform&lt;/a&gt;. Congratulations Rod! Here&amp;rsquo;s another great post &lt;a href="https://venturebeat.com/2017/11/15/atomist-launches-to-help-devs-automate-repository-creation-and-code-deployment/"&gt;on Atomist&amp;rsquo;s emerging from stealth &lt;/a&gt;. If you want to hear more, join &lt;a href="http://springoneplatform.io"&gt;him at SpringOne Platform&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Are you in the St. Louis area? Join fellow Spring Developer Advocate Mario Gray and me &lt;a href="https://twitter.com/steve_womack/status/931653007221121025"&gt;for Bootiful Testing&lt;/a&gt; December 13th, 2017.&lt;/li&gt;
-  &lt;li&gt;Auth0 has an interesting post that introduces using Gradle to build a Spring 5 application &lt;a href="https://auth0.com/blog/spring-5-embedded-tomcat-8-gradle-tutorial/"&gt;that manually embeds Apache Tomcat 5&lt;/a&gt;. (I think you&amp;rsquo;d probably be better off using Spring Boot 2 which auto-configures Apache Tomcat if its on the CLASSPATH).&lt;/li&gt;
-  &lt;li&gt;Our @SpringCentral Twitter account hilariously broke the &lt;a href="https://twitter.com/springcentral/status/931570478187126785"&gt;news before even I realized&lt;/a&gt;, but I recently updated my &lt;a href="https://dzone.com/refcardz/learn-microservices-in-java"&gt;DZone Microservices in Java refcard and it&amp;rsquo;s available now&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Spring Data lead Oliver Gierke &lt;a href="https://st.inf.tu-dresden.de/SalesPoint/"&gt;shares this sample application&lt;/a&gt;, &lt;em&gt;Salespoint&lt;/em&gt;, which is a Spring Boot-based POS framework use for teaching purposes at Technische Universität Dresden (which, I assume, means the technical university of Dresden, Germany), where Oliver teaches. Here&amp;rsquo;s &lt;a href="http://bit.ly/2zbY0z5"&gt;the project home&lt;/a&gt; and &lt;a href="http://bit.ly/2zaPTmo"&gt;the repository&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;This post introduces how T-Mobile refactored their major monolithic application &lt;a href="https://www.cloudfoundry.org/t-mobile-integrates-cloud-foundry-create-new-culture/?_lrsc=2e064143-6b50-44ec-a22d-ece03ddfe607"&gt;and introduced Cloud Foundry to change their culture&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;OAuth expert Will Tran discusses &lt;a href="https://www.infoq.com/presentations/oauth2-microservices-security"&gt;enforcing microservices’ security policies with OAuth 2.0&lt;/a&gt; in this fantastic InfoQ video.&lt;/li&gt;
-  &lt;li&gt;Neo4J legend Michael Hunger walks us through a &lt;a href="http://gist.asciidoctor.org/?dropboxs-56rhbvey5cp8c53%2Fdevoxx-conference-graph.adoc%3Fdl%3D0"&gt;network analysis using Neo4J&amp;rsquo;s Cypher language and a dataset based on Devoxx&lt;/a&gt; conference talks. If you&amp;rsquo;re using Neo4j (with, perhaps, Spring Data Neo4J) then this is a masterclass of a read for you.&lt;/li&gt;
-  &lt;li&gt;I love it when cloud platforms demonstrate Spring Boot applications.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Call it the &lt;a href="https://twitter.com/starbuxman?ref_src=twsrc%5Etfw"&gt;@starbuxman&lt;/a&gt; rule? Every cloud inevitably runs &lt;a href="https://twitter.com/springboot?ref_src=twsrc%5Etfw"&gt;@springboot&lt;/a&gt; apps. The folks at Oracle show how to run &lt;a href="https://twitter.com/springcloud?ref_src=twsrc%5Etfw"&gt;@springcloud&lt;/a&gt; on Oracle Cloud &amp;hellip; &lt;a href="https://t.co/BGZa26kGm7"&gt;&lt;a href="https://t.co/BGZa26kGm7"&gt;https://t.co/BGZa26kGm7&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;&amp;mdash; Richard Seroter (@rseroter) &lt;a href="https://twitter.com/rseroter/status/931561318565388288?ref_src=twsrc%5Etfw"&gt;November 17, 2017&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;p&gt;In this blog, &lt;a href="https://medium.com/oracledevs/spring-cloud-stream-and-kafka-based-microservices-on-oracle-cloud-9889732149a"&gt;Oracle demonstrates using Spring Cloud Stream&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
 </feed>

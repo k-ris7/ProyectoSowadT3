@@ -1,0 +1,1 @@
+$(function(){"use-strict";$(".side-nav-left").sideNav({edge:"left",closeOnClick:!1}),$(".side-nav-right").sideNav({edge:"right",closeOnClick:!1}),$(".slider").slider({full_width:!0}),$("ul.tabs").tabs(),$(".collapsible").collapsible({accordion:!1})});

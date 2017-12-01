@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script src="scripts/UtilitiesVM.js"></script>
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <link href="css/tableStyle.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var objParent;
+    $(document).ready(function () {
+        objParent = new UtilitiesVM();
+    });
+    </script>
+</head>
+<body>
+    <div class="datagrid">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="tbContentProductos"></tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

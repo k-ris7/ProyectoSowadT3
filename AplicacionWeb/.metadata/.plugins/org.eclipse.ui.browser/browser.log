@@ -11,3 +11,6 @@ Sep 14, 2017 17:43:36.08 [7212:8352:0914/174336.083:ERROR:media_internals.cc(107
 Sep 14, 2017 17:44:30.87 [7212:9148:0914/174430.875:ERROR:ssl_client_socket_impl.cc(1072)] handshake failed; returned -1, SSL error code 1, net_error -100
 Sep 14, 2017 19:47:45.43 [7212:8352:0914/194745.187:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
 Sep 14, 2017 20:12:39.67 [7212:8352:0914/201239.673:ERROR:media_internals.cc(107)] Cannot get RenderProcessHost
+
+Dec 01, 2017 08:48:12.60 NEW SESSION
+Dec 01, 2017 08:48:12.60 [10724:7964:1201/084812.606:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -105
